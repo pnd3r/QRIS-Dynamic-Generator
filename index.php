@@ -7,14 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* Chrome, Safari, Edge, Opera */
         input[type=number]::-webkit-outer-spin-button,
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
 
-        /* Firefox */
         input[type=number] {
             -moz-appearance: textfield;
         }
@@ -98,7 +96,7 @@
             $('#qrisForm').on('submit', function(e) {
                 e.preventDefault();
                 
-                var qtyValue = $('#qty').val().replace(/\./g, '');
+                var qtyValue = $('#qty').val().replace(/\./g, ''); 
                 
                 var formData = $(this).serialize();
                 formData = formData.replace($('#qty').val(), qtyValue);
@@ -113,12 +111,12 @@
                     },
                     error: function() {
                         alert('Error generating QR code.');
+                        console.error('Error during QR code generation');
                     }
                 });
             });
         });
     </script>
-
 
 </body>
 </html>
